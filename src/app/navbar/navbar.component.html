@@ -1,0 +1,111 @@
+
+<mat-toolbar class="mat-elevation-z8" >
+  <div>    
+    <p style="margin-right:10px"><i>Welcome!!! {{currentUser.username}}</i></p>
+    </div>
+      
+  <div class="row" style="text-align:center">
+    
+    <div class="column" style="display: flex; justify-content: flex-end">
+    
+      <div class="icon-text" style="display: flex; justify-content: flex-end">
+        
+        <button mat-button  style="width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 1rem;
+        padding-right:8px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        margin-left:30px;">         
+          <span class="name"><a routerLink="/home">Home</a></span>
+          
+        </button>
+      
+      </div>
+      </div>
+    
+    <div class="column" style="display: flex; justify-content: flex-end" >
+
+      <div class="icon-text" style="display: flex; justify-content: flex-end" >
+        <button mat-button  style="width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 1rem;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);margin-left:10px;
+        padding-right:12.5px;">
+          
+          <span class="name"><a routerLink="tweets/all" >Chat</a></span>
+        </button>
+      </div>
+    </div>
+    <div class="column" style="display: flex; justify-content: flex-end">
+      <div class="icon-text" style="display: flex; justify-content: flex-end">
+        <button mat-button  style="width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 1rem;
+        padding-right:12.5px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);margin-left:10px;">
+          
+          <span class="name"><a routerLink="user-list" style=" color: #000000;">Users</a></span>
+        </button>
+      </div>
+    </div>
+    <div class="column" style="display: flex; justify-content: flex-end">
+      <div class="icon-text" style="display: flex; justify-content: flex-end">
+    <button mat-button  style="width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+    padding-right:12.5px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);margin-left:10px;">
+      
+      <span class="name">
+        <a routerLink="passwordReset/{{currentUser.username}}">Reset Password</a></span>
+    </button>
+  </div>
+
+</div>
+
+<div class="column" style="display: flex; justify-content: flex-end; margin-left:470px; ">
+  <div class="icon-text" style="display: flex; justify-content: flex-end">
+    <button mat-button  style="width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+    padding-right:5px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">
+      
+      <span class="name">
+        <a routerLink="logout" (click)="doLogOut()" aria-hidden="true"><mat-icon style="display: flex; justify-content: flex-end">logout</mat-icon></a></span>
+    </button>
+  </div>
+</div>
+
+
+
+  <div>
+  <img style="width: 50px;height: 50px; margin-right:10px;margin-top: 20px;" src="../../assets/email.jpg" />
+</div>
+<div>
+  <ul><li style="list-style: none;color:#8ce476 ;">-------------------</li>
+    <li>
+  <span style="font-size: small;">{{currentUser.firstName}} {{currentUser.lastName}}</span></li>
+  <li>
+  <span  style="font-size: small;">+91 {{currentUser.contactNumber}}</span></li>
+<li>
+  <span style="font-size: small;">{{currentUser.email}}</span></li></ul>
+</div>
+
+
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+  <mat-sidenav-container>
